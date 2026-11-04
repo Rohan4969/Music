@@ -1,0 +1,842 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+    position: relative;
+    background: #000;
+    box-shadow: inset 0 0 500px rgba(0, 0, 0, 0.6);
+}
+
+
+/* =========================
+   BACKGROUND VIDEO
+========================= */
+
+.background-video {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: -2;
+}
+
+
+.chhath-player {
+
+    position: fixed;
+
+    left: 50%;
+    bottom: 25px;
+
+    transform: translateX(-50%);
+
+    width: min(650px, calc(100% - 30px));
+
+    min-height: 85px;
+
+    padding: 10px 16px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    z-index: 9999;
+
+
+    /* Chhath Theme */
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(49, 19, 13, 0.37),
+            rgba(75, 27, 16, 0.349)
+        );
+
+
+    border:
+
+        1px solid
+        rgba(255, 183, 77, 0.35);
+
+
+    border-radius: 45px;
+
+
+    /* Glass effect */
+
+    backdrop-filter: blur(15px);
+
+    -webkit-backdrop-filter: blur(15px);
+
+
+    /* Shadow */
+
+    box-shadow:
+
+        0 15px 45px
+        rgba(0, 0, 0, 0.55),
+
+        0 0 25px
+        rgba(255, 152, 0, 0.15);
+
+
+    color: white;
+}
+
+
+.hero-text {
+    position: fixed;
+
+    top: 45px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 90%;
+    max-width: 1000px;
+
+    text-align: center;
+
+    z-index: 20;
+
+    pointer-events: none;
+
+    /* Main font */
+    font-family: "Hind", sans-serif;
+
+    /* Smooth entrance */
+    animation: heroFade 1.5s ease-out both;
+}
+
+
+/* =========================================================
+   TOP DECORATIVE LINE
+========================================================= */
+
+.hero-text::before {
+    content: "";
+
+    display: block;
+
+    width: 180px;
+    height: 1px;
+
+    margin: 0 auto 14px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 215, 100, 0.9),
+        #fff1a8,
+        rgba(255, 215, 100, 0.9),
+        transparent
+    );
+
+    box-shadow:
+        0 0 8px rgba(255, 190, 50, 0.6);
+}
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.hero-text h1 {
+    position: relative;
+
+    margin: 0;
+
+    font-family: "Tiro Devanagari Hindi", serif;
+
+    font-size: clamp(34px, 5vw, 66px);
+
+    font-weight: 400;
+
+    line-height: 1.25;
+
+    letter-spacing: 2px;
+
+    /* Golden premium gradient */
+    background: linear-gradient(
+        180deg,
+        #fffce5 0%,
+        #fff1ad 25%,
+        #ffd45c 55%,
+        #f2a21a 78%,
+        #d8750b 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    /* Depth + glow */
+    filter:
+        drop-shadow(0 3px 3px rgba(0, 0, 0, 0.75))
+        drop-shadow(0 0 10px rgba(255, 190, 40, 0.35))
+        drop-shadow(0 0 22px rgba(255, 150, 20, 0.18));
+}
+
+
+/* =========================================================
+   SHINE EFFECT ON HEADING
+========================================================= */
+
+.hero-text h1::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 45%;
+    height: 100%;
+
+    background: linear-gradient(
+        100deg,
+        transparent,
+        rgba(255,255,255,0.45),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    animation: textShine 5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.hero-text p {
+    margin: 12px 0 0;
+
+    font-family: "Hind", sans-serif;
+
+    font-size: clamp(14px, 1.8vw, 21px);
+
+    font-weight: 500;
+
+    line-height: 1.5;
+
+    letter-spacing: 5px;
+
+    color: #fff4c9;
+
+    text-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.85),
+        0 0 10px rgba(255, 190, 60, 0.4);
+}
+
+
+/* =========================================================
+   DECORATIVE SYMBOLS
+========================================================= */
+
+.hero-text p::before {
+    content: "✦";
+
+    display: inline-block;
+
+    margin-right: 14px;
+
+    color: #ffd45c;
+
+    font-size: 12px;
+
+    vertical-align: middle;
+
+    text-shadow:
+        0 0 8px #ffb300,
+        0 0 15px rgba(255, 170, 20, 0.6);
+}
+
+
+.hero-text p::after {
+    content: "✦";
+
+    display: inline-block;
+
+    margin-left: 14px;
+
+    color: #ffd45c;
+
+    font-size: 12px;
+
+    vertical-align: middle;
+
+    text-shadow:
+        0 0 8px #ffb300,
+        0 0 15px rgba(255, 170, 20, 0.6);
+}
+
+
+/* =========================================================
+   BOTTOM DECORATIVE LINE
+========================================================= */
+
+.hero-text::after {
+    content: "";
+
+    display: block;
+
+    width: 110px;
+    height: 1px;
+
+    margin: 14px auto 0;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #ffd45c,
+        transparent
+    );
+
+    box-shadow:
+        0 0 7px rgba(255, 190, 50, 0.6);
+}
+
+
+/* =========================================================
+   ENTRANCE ANIMATION
+========================================================= */
+
+@keyframes heroFade {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -25px);
+
+        filter: blur(5px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, 0);
+
+        filter: blur(0);
+    }
+}
+
+
+/* =========================================================
+   TEXT SHINE ANIMATION
+========================================================= */
+
+@keyframes textShine {
+
+    0% {
+        left: -100%;
+    }
+
+    20% {
+        left: 130%;
+    }
+
+    100% {
+        left: 130%;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .hero-text {
+        top: 25px;
+
+        width: 94%;
+    }
+
+
+    .hero-text::before {
+        width: 100px;
+
+        margin-bottom: 8px;
+    }
+
+
+    .hero-text h1 {
+        font-size: 32px;
+
+        letter-spacing: 1px;
+
+        line-height: 1.3;
+    }
+
+
+    .hero-text p {
+        margin-top: 7px;
+
+        font-size: 13px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .hero-text p::before {
+        margin-right: 6px;
+
+        font-size: 9px;
+    }
+
+
+    .hero-text p::after {
+        margin-left: 6px;
+
+        font-size: 9px;
+    }
+
+
+    .hero-text::after {
+        width: 70px;
+
+        margin-top: 8px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .hero-text {
+        top: 20px;
+    }
+
+
+    .hero-text h1 {
+        font-size: 27px;
+    }
+
+
+    .hero-text p {
+        font-size: 11px;
+
+        letter-spacing: 1.5px;
+    }
+}
+
+
+/* =========================================================
+   LARGE SCREENS
+========================================================= */
+
+@media (min-width: 1400px) {
+
+    .hero-text {
+        top: 55px;
+    }
+
+
+    .hero-text h1 {
+        font-size: 70px;
+    }
+
+
+    .hero-text p {
+        font-size: 22px;
+    }
+}
+
+/* =========================
+   ALBUM
+========================= */
+
+.music-cover {
+
+    width: 62px;
+    height: 62px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border:
+        2px solid
+        rgba(255, 193, 7, 0.7);
+
+    box-shadow:
+        0 0 15px
+        rgba(255, 152, 0, 0.35);
+}
+
+
+.music-cover img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    animation: rotate 10s linear infinite;
+    animation-play-state: paused;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================
+   SONG DETAILS
+========================= */
+
+.track-details {
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+.track-details h3 {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    color: #fff8e1;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    margin-bottom: 4px;
+}
+
+
+.track-details p {
+
+    font-size: 12px;
+
+    color: #d7b9a5;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    margin-bottom: 7px;
+}
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress-container {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+}
+
+
+.progress-container span {
+
+    font-size: 9px;
+
+    color: #c9aaa0;
+
+    min-width: 28px;
+
+}
+
+
+#duration {
+
+    text-align: right;
+}
+
+
+/* =========================
+   RANGE BAR
+========================= */
+
+#progressBar {
+
+    flex: 1;
+
+    height: 4px;
+
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    background: #6d493d;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+
+/* Chrome / Edge */
+
+#progressBar::-webkit-slider-thumb {
+
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #fff3e0;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 8px
+        rgba(255, 183, 77, 0.8);
+}
+
+
+/* Firefox */
+
+#progressBar::-moz-range-thumb {
+
+    width: 10px;
+    height: 10px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #fff3e0;
+
+}
+
+
+/* =========================
+   CONTROLS
+========================= */
+
+.music-controls {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    flex-shrink: 0;
+}
+
+
+.control-btn {
+
+    width: 30px;
+    height: 30px;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #ead8cf;
+
+    transition: 0.2s;
+}
+
+
+.control-btn:hover {
+
+    color: #ffb74d;
+
+    transform: scale(1.1);
+}
+
+
+.control-btn svg {
+
+    width: 18px;
+    height: 18px;
+
+    fill: currentColor;
+}
+
+
+/* =========================
+   PLAY BUTTON
+========================= */
+
+.play-btn {
+
+    width: 48px;
+    height: 48px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #fff8e7;
+
+    color: #4e2115;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: 0.25s;
+
+    box-shadow:
+
+        0 5px 18px
+        rgba(0, 0, 0, 0.3);
+}
+
+
+.play-btn:hover {
+
+    transform: scale(1.08);
+
+    background: #ffffff;
+
+}
+
+
+.play-btn svg {
+
+    width: 21px;
+    height: 21px;
+
+    fill: currentColor;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .chhath-player {
+
+        width:
+            calc(100% - 20px);
+
+        bottom: 12px;
+
+        min-height: 75px;
+
+        padding: 8px 10px;
+
+        gap: 10px;
+
+        border-radius: 35px;
+    }
+
+
+    .music-cover {
+
+        width: 52px;
+        height: 52px;
+    }
+
+
+    .track-details h3 {
+
+        font-size: 12px;
+    }
+
+
+    .track-details p {
+
+        font-size: 10px;
+
+        margin-bottom: 5px;
+    }
+
+
+    .music-controls {
+
+        gap: 5px;
+    }
+
+
+    .control-btn {
+
+        width: 25px;
+        height: 25px;
+    }
+
+
+    .control-btn svg {
+
+        width: 15px;
+        height: 15px;
+    }
+
+
+    .play-btn {
+
+        width: 40px;
+        height: 40px;
+    }
+
+
+    .play-btn svg {
+
+        width: 17px;
+        height: 17px;
+    }
+}

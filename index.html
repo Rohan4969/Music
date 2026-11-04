@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chhath Song</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+        integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <video class="background-video" autoplay muted loop playsinline>
+        <source src="backgroundVideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="hero-text">
+        <h1>॥ जय छठी मैया ॥</h1>
+        <p>आस्था • श्रद्धा • भक्ति</p>
+    </div>
+    <!-- =========================
+     CHHATH MUSIC PLAYER
+========================= -->
+
+    <div class="chhath-player">
+
+        <!-- Album Image -->
+        <div class="music-cover">
+            <img id="trackImage" src="images/joda joda.jfif" alt="Song Cover">
+        </div>
+
+
+        <!-- Song Details -->
+        <div class="track-details">
+
+            <h3 id="trackName">
+                Chhath Puja Geet
+            </h3>
+
+            <p id="artistName">
+                Chhath Geet
+            </p>
+
+
+            <!-- Progress -->
+            <div class="progress-container">
+
+                <span id="currentTime">
+                    0:00
+                </span>
+
+                <input type="range" id="progressBar" min="0" max="100" value="0">
+
+                <span id="duration">
+                    0:00
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Controls -->
+        <div class="music-controls">
+
+            <!-- Previous -->
+            <button id="previousBtn" class="control-btn" title="Previous">
+                <i class="fa-solid fa-backward-step"></i>
+            </button>
+
+
+            <!-- Play / Pause -->
+            <button id="playBtn" class="play-btn" title="Play">
+
+                <i class="fa-solid fa-play"></i>
+
+            </button>
+
+
+            <!-- Next -->
+            <button id="nextBtn" class="control-btn" title="Next">
+                <i class="fa-solid fa-forward-step"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
